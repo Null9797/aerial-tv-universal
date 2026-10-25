@@ -1,0 +1,2 @@
+369d4dc7ac8b486719af932399207b12c1ca1ee35a40eed445fe661545fdc22d  apks/aerial-universal-1.49-guard.apk
+3777af351c20b75dbfabf07224eee149e704b94677865bae9a89ee87ae2c4280  apks/aerial-universal-1.49-standard.apk
