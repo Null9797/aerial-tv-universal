@@ -18,20 +18,21 @@
 Google 的 ADB 文档说明 Android 11 及更新版本支持无线配对；电视厂商可隐藏或禁用该功能：[Android Developers：ADB over Wi‑Fi](https://developer.android.com/tools/adb#connect-to-a-device-over-wi-fi-android-11)。
 TCL 通用 Android 设备的开发者选项步骤也见 [TCL 官方说明](https://www.tcl.com/global/en/support/faq/10877)；电视菜单仍可能因型号和软件版本不同而变化。
 
-### 常见品牌路径
+### 常见品牌路径（仅供菜单定位，入口会因地区、系统和型号改变）
 
-| 品牌 | 常见办法 | 说明 |
+| 品牌 / 系统 | 建议步骤 | 证据与限制 |
 |---|---|---|
-| Google TV / Android TV / Sony BRAVIA | 通用入口：关于 → OS build 连按约 7 次 → 开发者选项 → ADB 调试 | Sony 固件的设置层级和选项名称可能不同。 |
-| TCL / 雷鸟 Google TV | 优先使用通用入口。设置 → 系统 → 关于 → Android TV OS build 连按约 7 次。 | 国行旧固件差异大；不要把某机型的隐藏菜单按键序列套用到其他机型。 |
-| TCL 部分国行旧机型 | ADB 可能藏在厂商菜单中；若官方用户手册没有说明，请向厂商客服核实。 | 不要更改工程菜单中其他选项，不要执行恢复出厂设置。 |
-| 小米 / Redmi Android TV | 关于中找到产品型号或 Android TV OS build，按机型提示开启开发者选项；部分国行机型在「账号与安全」里开启 ADB 调试。 | 入口会因系统版本不同而变化。 |
-| Hisense / 海信 | Google TV / Android TV 机型使用通用入口。 | VIDAA 是另一套系统，不能通过 ADB 安装 Android APK。 |
-| OPPO / 一加电视 | 关于本机开启开发者选项，再打开 USB/ADB 调试。 | 具体按键触发方式依机型而异。 |
-| 海尔 / 模卡、部分创维等 | 以本机用户手册或厂商客服说明为准。 | 某些固件采用工程菜单，不建议盲目尝试网络上的序列。 |
-| Amazon Fire TV / Fire TV Stick | Settings → My Fire TV / Device → Developer Options → ADB Debugging。IP 通常在 About → Network 查看。 | Amazon 官方提供 [ADB 连接说明](https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html) 和 [APK 安装说明](https://developer.amazon.com/docs/fire-tv/installing-and-running-your-app.html)。本 APK 虽为 Android 应用，但桌面和屏保兼容性未经 Fire TV 验证。 |
-| Samsung Tizen / LG webOS | 不支持本 APK 的 Android ADB 安装流程。 | 系统并非 Android TV。 |
+| Google TV / 原生 Android TV | 设置 → 系统（或设备偏好设置）→ 关于 → 连按 Android TV OS build / Build 约 7 次；返回开发者选项开启 USB/ADB 调试。Android 11+ 若有无线调试，可用配对码。 | [Android Developers 官方说明](https://developer.android.com/studio/run/device)；厂商可隐藏该入口。 |
+| TCL / 雷鸟 Google TV | 先试通用 Android TV 路径。 | TCL 菜单因地区和固件不同；见 [TCL USB debugging FAQ](https://www.tcl.com/eu/en/support/faq/15199)。 |
+| TCL / 雷鸟部分国行固件 | 上游 Aerial 社区对部分机型记录为：设置 → 关于 → 本机信息，在页面内快速按遥控器 ↑、↓、←、→，进入“更多”后只寻找 ADB 开关。 | 来自 [上游 Aerial 机型说明](https://github.com/pengchujin/aerial-tv/blob/main/docs/devices/adb-by-brand.md)，不是通用 TCL 按键码；不匹配就停止，不进入其他工程选项。 |
+| 小米 / Redmi 电视、盒子 | 设置 → 关于 → 连按“产品型号”约 7 次启用开发者选项；部分国行固件随后在设置 → 账号与安全 → ADB 调试中开启。 | [小米官方说明](https://www.mi.com/global/support/article/KA-06513/)；菜单名称依型号变化。 |
+| Sony BRAVIA / 海信 Android TV | 通常采用 Android TV 通用路径。 | VIDAA 系统不是 Android TV；必须先确认系统版本/平台。 |
+| OPPO / 一加电视 | 上游社区记录的部分机型：设置 → 系统 → 关于本机 → 设备型号，按 ↑、↑、→、→ 后确认，再在开发者选项打开 USB/ADB 调试。 | 仅为特定型号社区记录；若无提示或不匹配，不要试其他组合。 |
+| 海尔 / 模卡、部分创维及其他国行电视 | 以本机说明书或厂商支持为准。 | 上游记录的某些海尔机型需进入工厂菜单；本指南不建议盲目操作工厂菜单，不明选项请勿更改。 |
+| Amazon Fire TV / Fire TV Stick | 设置 → My Fire TV（或 Device & Software）→ Developer Options → ADB Debugging；IP 在 About → Network。 | [Amazon 官方 ADB 说明](https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html)。此 APK 在 Fire TV 的桌面和屏保功能未经验证。 |
+| Samsung Tizen / LG webOS / Hisense VIDAA | 无 Android TV 的 ADB APK 安装方式。 | 不能安装此 Android APK。 |
 
+ADB 入口来自 Android/TCL/小米/Amazon 官方资料及上游 Aerial 的社区机型笔记。社区序列只适用于其记录的固件，不保证在同品牌其他机型有效。
 该清单不是所有型号的完整列表。菜单不存在时，可能是厂商没有向该机型开放 ADB。
 
 ## 3. 安装 Android Platform Tools
@@ -83,16 +84,16 @@ adb devices -l
 macOS / Linux：
 
 ```shell
-adb install -r "$HOME/Downloads/aerial-universal-1.49-standard.apk"
+adb install -r "$HOME/Downloads/aerial-universal-1.57-standard.apk"
 ```
 
 Windows PowerShell：
 
 ```powershell
-adb install -r "$env:USERPROFILE\Downloads\aerial-universal-1.49-standard.apk"
+adb install -r "$env:USERPROFILE\Downloads\aerial-universal-1.57-standard.apk"
 ```
 
-选择 Guard 时，把文件名换成 `aerial-universal-1.49-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Aerial。
+选择 Guard 时，把文件名换成 `aerial-universal-1.57-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Aerial。
 
 可选：用 ADB 打开已安装的应用：
 
@@ -106,7 +107,9 @@ adb shell monkey -p app.orchard.tv 1
 - **Guard**：此构建不注册常规 HOME 桌面入口。打开 Aerial，按其设置页提示配置守护桌面。某些设备会要求无障碍服务、使用情况访问或其他系统授权；只有理解授权用途并确认要使用守护功能后再逐项启用。
 - 在 Aerial 设置里选择翻页时钟等屏保，并设定空闲进入时间。屏保后待机是否生效由电视固件决定。
 
-## 7. 更新、变体切换与卸载
+## 7. 更新提示、变体切换与卸载
+
+本版本会定期查询 `Null9797/aerial-tv-universal` 的最新正式 Release；联网并打开 Aerial/控制中心时会检查更新。发现新版本后选择下载，电视系统安装器会显示确认界面。应用只选取与当前 flavor 匹配的 APK，不会静默安装。发布者必须继续使用相同签名证书，否则 Android 会拒绝覆盖更新。
 
 - 安装新版本时使用 `adb install -r <APK路径>`，这会尝试保留应用数据。
 - Standard 与 Guard 共用包名，安装另一个变体会替换当前变体，不能并行使用。

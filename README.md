@@ -8,14 +8,14 @@
 
 | 文件 | 版本 | 适用情形 |
 |---|---|---|
-| [Standard APK](https://github.com/Null9797/aerial-tv-universal/releases/download/v1.49-universal/aerial-universal-1.49-standard.apk) | 1.49-universal（versionCode 70） | 常规 Android TV / Google TV。声明标准 Android HOME 桌面入口，可通过系统界面设置默认桌面。建议先试这个版本。 |
-| [Guard APK](https://github.com/Null9797/aerial-tv-universal/releases/download/v1.49-universal/aerial-universal-1.49-guard.apk) | 1.49-universal-guard（versionCode 70） | 部分国产固件会拒绝安装声明 HOME 桌面入口的应用；此版本不声明该入口，需在 Aerial 内完成守护桌面设置，并按引导授予必要权限。 |
+| [Standard APK](https://github.com/Null9797/aerial-tv-universal/releases/download/v1.57-universal/aerial-universal-1.57-standard.apk) | 1.57-universal（versionCode 80） | 常规 Android TV / Google TV。声明标准 Android HOME 桌面入口，可通过系统界面设置默认桌面。建议先试这个版本。 |
+| [Guard APK](https://github.com/Null9797/aerial-tv-universal/releases/download/v1.57-universal/aerial-universal-1.57-guard.apk) | 1.57-universal-guard（versionCode 80） | 部分国产固件会拒绝安装声明 HOME 桌面入口的应用；此版本不声明该入口，需在 Aerial 内完成守护桌面设置，并按引导授予必要权限。 |
 
 如果不确定，先选 **standard**。若电视明确提示不允许安装桌面类应用，再试 **guard**。从一个版本切换到另一个版本时会覆盖同包名应用；如系统提示签名或降级冲突，请停止操作并先联系维护者，不要卸载电视上的其他应用。
 
 ## 效果展示
 
-以下为 TCL Q10G Pro 上运行 Aerial 定制测试版的实机界面截图，用于展示桌面排版和翻页时钟。它们来自此前的电视测试会话，并非当前 1.49 通用 APK 安装后重新截取；天气城市和温度仅为截图示例。不同电视的屏幕比例、系统字体和厂商固件可能造成显示差异。
+桌面图为 TCL Q10G Pro 的实际电视截图，展示本次打包中的五应用 Dock 和内置图标效果；天气信息因设备设置而异。翻页时钟图为定制版运行截图。其他尺寸、系统字体、安全区域和厂商固件可能造成外观差异。
 
 ### 桌面
 
@@ -25,13 +25,16 @@
 
 ![Aerial Universal 翻页时钟屏保效果](screenshots/flip-clock-demo.png)
 
-## 此版本包含的定制
+## 1.57 定制内容
 
-- 针对不同电视可用显示区域自适应的桌面布局，包含左上时间、日期、天气，右上状态入口和底部应用 Dock。
-- 统一 Dock 应用图标的显示尺寸和间距，焦点状态扩大并保留遥控器操作空间。
-- 右上网络状态与 Aerial 设置入口采用独立胶囊按钮；桌面保留毛玻璃 Dock 样式。
-- 翻页时钟屏保；可配置闲置多久启动屏保，以及屏保继续运行一段时间后请求 Android 进入待机。
-- 继承上游 Aerial 的应用整理、壁纸、航拍屏保和电视遥控器导航等能力。
+- 按可用电视显示区域自适应布局，呈现时间、日期、天气、快捷入口和五应用 Dock。
+- 内置 14 款电视适配应用图标；识别到对应应用时使用内置图标，未匹配时沿用应用原图标。
+- 调整 Dock 尺寸、焦点动画和间距，保留遥控器操作空间。
+- 提供 Auto、30、60、120 Hz 刷新率选项；电视不支持或系统不开放的刷新率不会被强行设置。
+- 保留翻页时钟、壁纸（含视频壁纸）、屏保计时和 Aerial 上游应用整理、航拍屏保等功能。
+- 应用检查 Null9797 仓库的新发布版本，下载匹配 Standard/Guard 的 APK 后交由电视系统安装器确认。更新不会静默安装；后续发布需保持同一签名证书。
+
+完整变更见 [RELEASE_NOTES.md](RELEASE_NOTES.md)。
 
 个别电视固件会限制第三方桌面、后台启动、屏保和待机行为；“自适应”用于按可用显示尺寸布局，不代表已在所有电视型号上验证。
 
@@ -63,7 +66,7 @@ adb pair <电视IP>:<配对端口>
 # 根据提示输入电视显示的一次性配对码
 adb connect <电视IP>:<连接端口>
 adb devices
-adb install -r "/path/to/aerial-universal-1.49-standard.apk"
+adb install -r "/path/to/aerial-universal-1.57-standard.apk"
 ```
 
 旧版 Android TV 或电视自带网络 ADB 常见连接方式是 `adb connect <电视IP>:5555`。端口会因 Android 版本、厂商和当前调试模式不同而变化，应以电视调试页显示的信息为准。macOS、Windows、Linux 的 Android Platform Tools 与官方 ADB 说明见 [Android Developers：ADB](https://developer.android.com/tools/adb) 和 [Run apps on a hardware device](https://developer.android.com/studio/run/device)。
@@ -71,6 +74,10 @@ adb install -r "/path/to/aerial-universal-1.49-standard.apk"
 ### 方式二：电视上的安装器
 
 把 APK 放进 U 盘或电视可访问的下载目录，在电视文件管理器中打开 APK，按电视提示允许本次安装。部分电视没有文件管理器、拦截第三方桌面安装，或需要厂商安装授权；此时使用上面的 ADB 方式。
+
+### 更新提示
+
+Aerial 定期检查本仓库的 GitHub Releases。电视联网后，打开 Aerial 或控制中心即可刷新检查；发现新版本时会显示提示。选择下载后仍由 Android 安装器显示确认页，需在电视上确认。只会提供与当前 Standard/Guard 变体相符的 APK。
 
 ### 设置为默认桌面与开启屏保
 
@@ -105,6 +112,16 @@ adb install -r "/path/to/aerial-universal-1.49-standard.apk"
 | Samsung Tizen、LG webOS | 不是 Android TV，不能通过 ADB 安装本项目 APK。 |
 
 如果电视菜单没有 ADB 调试、无线调试或开发者选项，不建议尝试网上流传的通用工程码或修改系统分区。ADB 连接只应在可信的本地网络内使用；安装后可在电视开发者选项中关闭调试。
+
+### 机型与系统支持列表
+
+| 类别 | 机型 / 系统 | 本定制版状态 | 说明 |
+|---|---|---|---|
+| 已完整实测 | TCL Q10G Pro（MT5879，Android 11） | 主测试机 | 桌面、Standard/Guard 安装流程、翻页时钟等按该固件验证；其他 TCL 固件仍可能不同。 |
+| 上游有设备记录，未以本定制版逐台回归 | TCL M7221 / MT9655、Xiaomi MiTV-MFTR0 / MFFU0 / MFTP0 / MTSU0 / NSOP0、CM311-1 盒子、Hisense Android TV、OPPO / Skyworth / Xgimi 等 Android TV 设备 | 可能运行，需试装 | 上游 Aerial 的设备记录不等于本定制版或这些定制功能已通过验证；桌面接管、壁纸、待机和分辨率行为看厂商固件。 |
+| 不支持安装 Android APK | Samsung Tizen、LG webOS、Hisense VIDAA（非 Android 版） | 不支持 | 这些系统不是 Android TV / Google TV。 |
+
+上表不是兼容性承诺。请先保留原桌面，优先试 Standard；遇到固件拒绝 HOME 类应用时才考虑 Guard。
 
 ## 常见问题
 
@@ -144,8 +161,8 @@ adb install -r "/path/to/aerial-universal-1.49-standard.apk"
 
 ## 发布信息
 
-- 版本：`1.49-universal` / `1.49-universal-guard`
-- versionCode：`70`
+- 版本：`1.57-universal` / `1.57-universal-guard`
+- versionCode：`80`
 - 最低 Android：Android 5.0（API 21）
 - 构建基线：Aerial 上游 `pengchujin/aerial-tv`，基线提交 `b48e2775c58b87b590ce73bd10f0d00a5f7e852f`
 - 文件校验：见 [SHA256SUMS.txt](SHA256SUMS.txt)

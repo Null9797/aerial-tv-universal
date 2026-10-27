@@ -10,13 +10,16 @@ Get the APKs from [GitHub Releases](https://github.com/Null9797/aerial-tv-univer
 
 | Variant | File | Use case |
 |---|---|---|
-| Standard | `aerial-universal-1.49-standard.apk` | Declares Android's regular HOME launcher entry. Try this first on Android TV / Google TV. |
-| Guard | `aerial-universal-1.49-guard.apk` | Omits the HOME entry for firmware that blocks launcher packages. Follow the in-app setup and grant only permissions you understand and need. |
+| Standard | `aerial-universal-1.57-standard.apk` | Declares Android's regular HOME launcher entry. Try this first on Android TV / Google TV. |
+| Guard | `aerial-universal-1.57-guard.apk` | Omits the HOME entry for firmware that blocks launcher packages. Follow the in-app setup and grant only permissions you understand and need. |
 
 ## What this build adds
 
 - TV layout that adapts to the available display area, with time, date, weather, network/settings controls, and a five-app dock.
-- Refined dock icon sizing and focus spacing for remote navigation.
+- Bundled 14 TV-sized icons for recognized apps, with original-icon fallback for all others.
+- Refined dock sizing, focus animation, and spacing for remote navigation.
+- Added Auto / 30 / 60 / 120 Hz refresh preferences where supported by the TV firmware.
+- Retained the flip-clock screensaver, video wallpaper options, and a release-based update prompt; installation is confirmed by Android.
 - Flip-clock screensaver with configurable idle-to-screensaver and screensaver-to-standby delays.
 - Upstream Aerial wallpaper, app organization, and screensaver capabilities.
 
@@ -24,7 +27,7 @@ Get the APKs from [GitHub Releases](https://github.com/Null9797/aerial-tv-univer
 
 ![Flip-clock screensaver](screenshots/flip-clock-demo.png)
 
-The images are actual screenshots from an earlier Aerial custom test build on a TCL Q10G Pro, provided as representative UI examples. They were not recaptured from the current 1.49 universal APK. Weather details in the images are illustrative; device behavior and layout can vary by firmware and display.
+The home screen image is a real TCL Q10G Pro capture of this customized interface. The flip-clock image is a representative capture from the same customization. These images document the tested appearance; they are not a guarantee that every listed Android TV model has been tested. Weather details are illustrative, and layout can vary by firmware and display.
 
 ## Installation
 
@@ -33,7 +36,7 @@ The detailed [installation guide](INSTALL.md) covers Android TV / Google TV deve
 Short version: enable ADB debugging on the TV, connect the TV and computer to the same local network, authorize the computer on the TV, then install one APK with:
 
 ```shell
-adb install -r "/path/to/aerial-universal-1.49-standard.apk"
+adb install -r "/path/to/aerial-universal-1.57-standard.apk"
 ```
 
 Do not assume every TV uses port 5555. Android 11+ wireless debugging generally shows a pairing port and a separate connection port on the TV. See [Android's official ADB guide](https://developer.android.com/tools/adb).
@@ -50,4 +53,4 @@ This derivative build is based on [pengchujin/aerial-tv](https://github.com/peng
 
 ## Checksums
 
-See [SHA256SUMS.txt](SHA256SUMS.txt) to verify downloaded APK files.
+See [SHA256SUMS.txt](SHA256SUMS.txt) to verify downloaded APK files. Full model-by-model ADB and installation notes are in [INSTALL.md](INSTALL.md).
