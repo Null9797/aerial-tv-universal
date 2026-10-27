@@ -19,15 +19,17 @@
 
 启动器名称与图标已改为 Halo TV；应用包名及签名保持不变，旧版可覆盖更新。APK 文件仍保留 `aerial-universal-` 前缀，以兼容已发布 1.57 内置更新器。
 
-桌面图为 TCL Q10G Pro 的实际电视截图，展示本次打包中的五应用 Dock 和内置图标效果；天气信息因设备设置而异。翻页时钟图为定制版运行截图。其他尺寸、系统字体、安全区域和厂商固件可能造成外观差异。
+下方桌面、壁纸设置截图由 1.58 Guard 在 TCL Q10G Pro（1920×1080）实机通过 ADB 截取。天气信息会随设备设置变化。其他尺寸、系统字体、安全区域和厂商固件可能造成外观差异。
 
 ### 桌面
 
-![Halo TV 桌面效果（电视实机截图）](screenshots/home-tcl-demo.png)
+![Halo TV 1.58 桌面效果（TCL Q10G Pro 实机截图）](screenshots/home-tcl-q10g-pro-1.58.png)
 
-### 翻页时钟屏保
+### 壁纸设置
 
-![Halo TV 翻页时钟屏保效果](screenshots/flip-clock-demo.png)
+![Halo TV 1.58 壁纸设置（TCL Q10G Pro 实机截图）](screenshots/wallpaper-settings-tcl-q10g-pro-1.58.png)
+
+翻页时钟可在壁纸与屏保设置中选择；此处不放旧版本的屏保示意图。
 
 ## 1.58 Halo TV 品牌更新
 

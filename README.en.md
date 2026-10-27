@@ -28,11 +28,11 @@ Get the APKs from [GitHub Releases](https://github.com/Null9797/aerial-tv-univer
 
 ![Halo TV app icon](screenshots/halo-tv-icon.png)
 
-![Halo TV home screen](screenshots/home-tcl-demo.png)
+![Halo TV 1.58 home screen (TCL Q10G Pro capture)](screenshots/home-tcl-q10g-pro-1.58.png)
 
-![Flip-clock screensaver](screenshots/flip-clock-demo.png)
+![Halo TV 1.58 wallpaper settings (TCL Q10G Pro capture)](screenshots/wallpaper-settings-tcl-q10g-pro-1.58.png)
 
-The home screen image is a real TCL Q10G Pro capture of this customized interface. The flip-clock image is a representative capture from the same customization. These images document the tested appearance; they are not a guarantee that every listed Android TV model has been tested. Weather details are illustrative, and layout can vary by firmware and display.
+Both images were captured from Halo TV 1.58 Guard running on a TCL Q10G Pro (1920×1080) using ADB. Weather details depend on device settings. Layout and feature support may vary by firmware and display.
 
 ## Installation
 
