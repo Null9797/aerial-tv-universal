@@ -1,4 +1,4 @@
-# Aerial Universal（非官方二次开发版）
+# Halo TV（基于 Aerial 二次开发）
 
 > **重要说明：本项目并非 Aerial 原作者作品，也不是官方发行版。** 本项目基于 [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv) 开源项目进行二次开发，由 Null_ 整理和发布。Aerial 原项目及其名称、代码和许可归原作者及各自权利人所有。本项目与 Aerial 原作者、Apple、电视厂商均无隶属或背书关系。
 
@@ -8,25 +8,32 @@
 
 | 文件 | 版本 | 适用情形 |
 |---|---|---|
-| [Standard APK](https://github.com/Null9797/aerial-tv-universal/releases/download/v1.57-universal/aerial-universal-1.57-standard.apk) | 1.57-universal（versionCode 80） | 常规 Android TV / Google TV。声明标准 Android HOME 桌面入口，可通过系统界面设置默认桌面。建议先试这个版本。 |
-| [Guard APK](https://github.com/Null9797/aerial-tv-universal/releases/download/v1.57-universal/aerial-universal-1.57-guard.apk) | 1.57-universal-guard（versionCode 80） | 部分国产固件会拒绝安装声明 HOME 桌面入口的应用；此版本不声明该入口，需在 Aerial 内完成守护桌面设置，并按引导授予必要权限。 |
+| [Standard APK](https://github.com/Null9797/aerial-tv-universal/releases/download/v1.58-halo/aerial-universal-1.58-standard.apk) | 1.58-halo（versionCode 81） | 常规 Android TV / Google TV。声明标准 Android HOME 桌面入口，可通过系统界面设置默认桌面。建议先试这个版本。 |
+| [Guard APK](https://github.com/Null9797/aerial-tv-universal/releases/download/v1.58-halo/aerial-universal-1.58-guard.apk) | 1.58-halo-guard（versionCode 81） | 部分国产固件会拒绝安装声明 HOME 桌面入口的应用；此版本不声明该入口，需在 Halo TV 内完成守护桌面设置，并按引导授予必要权限。 |
 
 如果不确定，先选 **standard**。若电视明确提示不允许安装桌面类应用，再试 **guard**。从一个版本切换到另一个版本时会覆盖同包名应用；如系统提示签名或降级冲突，请停止操作并先联系维护者，不要卸载电视上的其他应用。
 
-## 效果展示
+## Halo TV 图标与效果展示
+
+![Halo TV 应用图标](screenshots/halo-tv-icon.png)
+
+启动器名称与图标已改为 Halo TV；应用包名及签名保持不变，旧版可覆盖更新。APK 文件仍保留 `aerial-universal-` 前缀，以兼容已发布 1.57 内置更新器。
 
 桌面图为 TCL Q10G Pro 的实际电视截图，展示本次打包中的五应用 Dock 和内置图标效果；天气信息因设备设置而异。翻页时钟图为定制版运行截图。其他尺寸、系统字体、安全区域和厂商固件可能造成外观差异。
 
 ### 桌面
 
-![Aerial Universal 桌面效果（电视实机截图）](screenshots/home-tcl-demo.png)
+![Halo TV 桌面效果（电视实机截图）](screenshots/home-tcl-demo.png)
 
 ### 翻页时钟屏保
 
-![Aerial Universal 翻页时钟屏保效果](screenshots/flip-clock-demo.png)
+![Halo TV 翻页时钟屏保效果](screenshots/flip-clock-demo.png)
 
-## 1.57 定制内容
+## 1.58 Halo TV 品牌更新
 
+- 应用名、启动图标、Android TV 横幅、更新页标题和手机设置页标题统一改为 Halo TV。
+- 在更新页面添加基于 Aerial 开源项目二次开发的非官方声明。
+- 保留原包名、签名及更新器可识别的 APK 文件名前缀，以支持从 1.57 覆盖升级。
 - 按可用电视显示区域自适应布局，呈现时间、日期、天气、快捷入口和五应用 Dock。
 - 内置 14 款电视适配应用图标；识别到对应应用时使用内置图标，未匹配时沿用应用原图标。
 - 调整 Dock 尺寸、焦点动画和间距，保留遥控器操作空间。
@@ -47,7 +54,7 @@
 电脑需要安装 Android Platform Tools（含 `adb`），并与电视连接到同一个家庭网络。先在电视上开启 ADB 调试，查看电视的局域网 IP。下载本页的一个 APK 到电脑，然后把下面提示词发给能在电脑上执行命令的 AI 助手：
 
 ```text
-请使用我电脑上的 Android Platform Tools，通过 ADB 帮我安装 Aerial Universal。
+请使用我电脑上的 Android Platform Tools，通过 ADB 帮我安装 Halo TV。
 电视 IP：<电视的局域网 IP>
 APK 完整路径：<下载的 APK 完整路径>
 版本选择：standard 或 guard（只能选一个）
@@ -55,7 +62,7 @@ APK 完整路径：<下载的 APK 完整路径>
 先检查 adb 是否可用、APK 文件是否存在，并尝试按电视显示的连接方式连接。
 若电视出现 RSA 授权或配对码，请暂停并告诉我在电视上确认；不要尝试绕过授权。
 连接后先用 adb devices 确认目标设备，再执行 adb install -r "<APK 完整路径>"。
-安装成功后告诉我如何打开 Aerial。不要卸载其他应用，不要关闭系统安全功能，
+安装成功后告诉我如何打开 Halo TV。不要卸载其他应用，不要关闭系统安全功能，
 不要改默认桌面或授予持续权限，除非我另外明确要求。最后说明实际执行的命令和结果。
 ```
 
@@ -66,7 +73,7 @@ adb pair <电视IP>:<配对端口>
 # 根据提示输入电视显示的一次性配对码
 adb connect <电视IP>:<连接端口>
 adb devices
-adb install -r "/path/to/aerial-universal-1.57-standard.apk"
+adb install -r "/path/to/aerial-universal-1.58-standard.apk"
 ```
 
 旧版 Android TV 或电视自带网络 ADB 常见连接方式是 `adb connect <电视IP>:5555`。端口会因 Android 版本、厂商和当前调试模式不同而变化，应以电视调试页显示的信息为准。macOS、Windows、Linux 的 Android Platform Tools 与官方 ADB 说明见 [Android Developers：ADB](https://developer.android.com/tools/adb) 和 [Run apps on a hardware device](https://developer.android.com/studio/run/device)。
@@ -77,18 +84,18 @@ adb install -r "/path/to/aerial-universal-1.57-standard.apk"
 
 ### 更新提示
 
-Aerial 定期检查本仓库的 GitHub Releases。电视联网后，打开 Aerial 或控制中心即可刷新检查；发现新版本时会显示提示。选择下载后仍由 Android 安装器显示确认页，需在电视上确认。只会提供与当前 Standard/Guard 变体相符的 APK。
+Halo TV 定期检查本仓库的 GitHub Releases。电视联网后，打开 Halo TV 或控制中心即可刷新检查；发现新版本时会显示提示。选择下载后仍由 Android 安装器显示确认页，需在电视上确认。只会提供与当前 Standard/Guard 变体相符的 APK。
 
 ### 设置为默认桌面与开启屏保
 
-- **standard**：安装后按遥控器 Home 键，在系统弹出的桌面选择界面中选 Aerial；如有“始终”选项，只有确认要长期使用 Aerial 时才选“始终”。部分系统可在「设置 → 应用 → 默认应用 → 主屏幕应用」里更改。
-- **guard**：仅当该版本的设置流程提示时，按 Aerial 屏幕上的步骤设置守护桌面。无障碍、使用情况访问、通知监听、悬浮窗等授权会影响电视的系统行为，逐项阅读电视上的说明，只启用完成所需功能的权限。
-- 屏保需在 Aerial 设置中选择。电视系统可能另有独立屏保计时器；不同品牌对第三方屏保支持不一致。
+- **standard**：安装后按遥控器 Home 键，在系统弹出的桌面选择界面中选 Halo TV；如有“始终”选项，只有确认要长期使用 Halo TV 时才选“始终”。部分系统可在「设置 → 应用 → 默认应用 → 主屏幕应用」里更改。
+- **guard**：仅当该版本的设置流程提示时，按 Halo TV 屏幕上的步骤设置守护桌面。无障碍、使用情况访问、通知监听、悬浮窗等授权会影响电视的系统行为，逐项阅读电视上的说明，只启用完成所需功能的权限。
+- 屏保需在 Halo TV 设置中选择。电视系统可能另有独立屏保计时器；不同品牌对第三方屏保支持不一致。
 - “屏保后进入待机”依赖 Android 和电视固件允许屏保服务结束后进入待机。该功能已在 TCL Q10G Pro 测试；其他设备不保证完整支持。
 
 ### 退出或切回原桌面
 
-在电视「设置 → 应用 → 默认应用 → 主屏幕应用」中选回原桌面；或者清除 Aerial 的默认桌面选择，再按 Home 重新选择。卸载 Aerial 前先切回原桌面。不要用 ADB 删除或停用系统桌面。
+在电视「设置 → 应用 → 默认应用 → 主屏幕应用」中选回原桌面；或者清除 Halo TV 的默认桌面选择，再按 Home 重新选择。卸载 Halo TV 前先切回原桌面。不要用 ADB 删除或停用系统桌面。
 
 ## ADB 调试入口：常见 Android TV / Google TV
 
@@ -135,9 +142,9 @@ Aerial 定期检查本仓库的 GitHub Releases。电视联网后，打开 Aeria
 
 **Q：提示 `INSTALL_FAILED_USER_RESTRICTED` 或禁止安装？** 这是电视系统或厂商安全策略拦截。先检查电视的安装确认提示和「允许通过 ADB 安装」相关设置；本项目不建议关闭通用应用验证、系统安装器或其他安全功能。不同固件的限制可能无法通过标准安装解决。
 
-**Q：安装成功但按 Home 回到原桌面？** 在系统默认应用中选择 Aerial。Guard 版本不是常规 HOME 入口；需按应用内设置步骤启用守护桌面，而且某些电视固件可能仍会阻止。
+**Q：安装成功但按 Home 回到原桌面？** 在系统默认应用中选择 Halo TV。Guard 版本不是常规 HOME 入口；需按应用内设置步骤启用守护桌面，而且某些电视固件可能仍会阻止。
 
-**Q：屏保或待机在我的电视上不生效？** 厂商对屏保调度、后台运行和待机控制的实现不同。检查 Aerial 屏保选择、系统屏保计时和电源设置；不要期待所有 Android 电视的行为完全一致。
+**Q：屏保或待机在我的电视上不生效？** 厂商对屏保调度、后台运行和待机控制的实现不同。检查 Halo TV 屏保选择、系统屏保计时和电源设置；不要期待所有 Android 电视的行为完全一致。
 
 **Q：APK 校验值在哪里？** 查看 [SHA256SUMS.txt](SHA256SUMS.txt)，下载后可用 `shasum -a 256 <文件>`（macOS/Linux）或 `certutil -hashfile <文件> SHA256`（Windows）核对。
 
@@ -161,8 +168,8 @@ Aerial 定期检查本仓库的 GitHub Releases。电视联网后，打开 Aeria
 
 ## 发布信息
 
-- 版本：`1.57-universal` / `1.57-universal-guard`
-- versionCode：`80`
+- 版本：`1.58-halo` / `1.58-halo-guard`
+- versionCode：`81`
 - 最低 Android：Android 5.0（API 21）
 - 构建基线：Aerial 上游 `pengchujin/aerial-tv`，基线提交 `b48e2775c58b87b590ce73bd10f0d00a5f7e852f`
 - 文件校验：见 [SHA256SUMS.txt](SHA256SUMS.txt)

@@ -1,2 +1,2 @@
-1665ea9ea47b97d6077fec05e29907c63f0087e6e597c4315a32706b22bbc504  apks/aerial-universal-1.57-guard.apk
-e00f69897bdec05fa2a83f5f03200bd284a78e82876ef313c7e041fc2574ef16  apks/aerial-universal-1.57-standard.apk
+f029fad6080b364776165fdfd7e05659ab24a30cf306fbe79ac0b82dd3f86ffb  apks/aerial-universal-1.58-guard.apk
+9bc55353a13973368e91b8bbe9871d62b89643cdbf5677a4f93619457010117a  apks/aerial-universal-1.58-standard.apk

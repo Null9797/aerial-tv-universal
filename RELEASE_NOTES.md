@@ -1,27 +1,24 @@
-# Aerial Universal 1.57
+# Halo TV 1.58（Standard + Guard）
 
-**Unofficial derivative build based on Aerial by pengchujin. This is a community modification, not original work or an upstream release.**
+**Halo TV 是基于 [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv) 二次开发的非官方版本，不是 Aerial 原作或原作者发行版。** 上游 MIT 许可和版权声明保留在本仓库。上游作者未参与、未背书本版本。
 
-## APK variants
+## 下载
 
-- `aerial-universal-1.57-standard.apk` — declares Android HOME launcher entry.
-- `aerial-universal-1.57-guard.apk` — omits HOME entry for firmware that blocks launcher apps; requires in-app Guard setup and any permissions shown by the TV.
+每台电视只安装一个变体；Standard 与 Guard 使用相同包名，不能并存。APK 文件仍使用 `aerial-universal-` 前缀，以便已发布的 1.57 更新器找到匹配变体。
 
-Both variants use package `app.orchard.tv`; install only one.
+- `aerial-universal-1.58-standard.apk` — Android TV / Google TV 常规桌面入口。
+- `aerial-universal-1.58-guard.apk` — 仅供固件拦截桌面类应用时使用，需要按应用内指引完成 Guard 设置。
 
-## Changes in 1.57
+## 1.58 更新
 
-- Added 14 bundled, TV-sized app icon designs for recognized apps. Apps without a bundled match keep their original launcher icon.
-- Refined adaptive home layout, five-item dock sizing and spacing, and remote-focus animation.
-- Added display refresh preference: Auto, 30, 60, or 120 Hz. Actual modes depend on the TV panel, Android version, and vendor firmware; unsupported rates are not forced.
-- Kept weather, date, and time on the home screen; added wallpaper and input access alongside network and Aerial settings.
-- Retained flip-clock screensaver, inactivity timer, wallpaper and video wallpaper tools, and Aerial's upstream organization/screensaver features.
-- Added/retained update checks against the Null9797 release repository. A newer matching flavor can be downloaded from Aerial and passed to the Android system installer; the user must confirm installation on the TV.
+- 应用名称、启动图标、Android TV 横幅、控制中心版本标识和手机设置页标题统一为 Halo TV。
+- 更新页面增加醒目的来源说明：Halo TV 基于 Aerial 开源项目二次开发，非官方版本。
+- 保持包名 `app.orchard.tv`、原签名身份和更新器可识别的 APK 命名前缀，以支持 1.57 覆盖更新并保留设置与数据。
+- 继续包含自适应电视桌面、五应用 Dock、14 款内置电视图标、天气日期、壁纸和视频壁纸、翻页时钟屏保及刷新率选项。
+- 两个 APK 的版本号相同，`versionCode=81`；新包不会静默安装，更新仍须在电视系统安装器中确认。
 
-## Compatibility
+其他适配、功能及已知限制见 [README](README.md)、[安装指南](INSTALL.md) 和 [FAQ](FAQ.md)。
 
-Primary end-to-end test device: TCL Q10G Pro (MT5879, Android 11). The home screenshot is a real TCL capture; the flip-clock screenshot is a representative capture from the custom build. Other devices are not individually verified for this release. See `README.md`, `INSTALL.md`, and `FAQ.md` for conservative model guidance.
+## 兼容性说明
 
-## Attribution
-
-This is an unofficial derivative of the MIT-licensed [Aerial project](https://github.com/pengchujin/aerial-tv), not an original app and not endorsed by the upstream author or TV manufacturers. Upstream attribution and license are preserved in `LICENSE`. Bundled third-party marks/icons belong to their respective owners.
+TCL Q10G Pro 是当前实测设备。其他 Android TV / Google TV 机型尚未逐台回归；布局、安全区域、屏保调度、刷新率与待机行为可能因固件不同。非 Android TV 系统（如 Tizen、webOS、VIDAA）不能安装 Android APK。

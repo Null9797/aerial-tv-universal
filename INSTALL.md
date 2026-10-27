@@ -84,16 +84,16 @@ adb devices -l
 macOS / Linux：
 
 ```shell
-adb install -r "$HOME/Downloads/aerial-universal-1.57-standard.apk"
+adb install -r "$HOME/Downloads/aerial-universal-1.58-standard.apk"
 ```
 
 Windows PowerShell：
 
 ```powershell
-adb install -r "$env:USERPROFILE\Downloads\aerial-universal-1.57-standard.apk"
+adb install -r "$env:USERPROFILE\Downloads\aerial-universal-1.58-standard.apk"
 ```
 
-选择 Guard 时，把文件名换成 `aerial-universal-1.57-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Aerial。
+选择 Guard 时，把文件名换成 `aerial-universal-1.58-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Halo TV。
 
 可选：用 ADB 打开已安装的应用：
 
@@ -103,17 +103,17 @@ adb shell monkey -p app.orchard.tv 1
 
 ## 6. 选择桌面和屏保
 
-- **Standard**：按 Home 键，在 Android 的桌面选择器中选 Aerial；确认要作为长期桌面后，再选择“始终”。也可从系统默认应用设置里更改主屏幕应用。
-- **Guard**：此构建不注册常规 HOME 桌面入口。打开 Aerial，按其设置页提示配置守护桌面。某些设备会要求无障碍服务、使用情况访问或其他系统授权；只有理解授权用途并确认要使用守护功能后再逐项启用。
-- 在 Aerial 设置里选择翻页时钟等屏保，并设定空闲进入时间。屏保后待机是否生效由电视固件决定。
+- **Standard**：按 Home 键，在 Android 的桌面选择器中选 Halo TV；确认要作为长期桌面后，再选择“始终”。也可从系统默认应用设置里更改主屏幕应用。
+- **Guard**：此构建不注册常规 HOME 桌面入口。打开 Halo TV，按其设置页提示配置守护桌面。某些设备会要求无障碍服务、使用情况访问或其他系统授权；只有理解授权用途并确认要使用守护功能后再逐项启用。
+- 在 Halo TV 设置里选择翻页时钟等屏保，并设定空闲进入时间。屏保后待机是否生效由电视固件决定。
 
 ## 7. 更新提示、变体切换与卸载
 
-本版本会定期查询 `Null9797/aerial-tv-universal` 的最新正式 Release；联网并打开 Aerial/控制中心时会检查更新。发现新版本后选择下载，电视系统安装器会显示确认界面。应用只选取与当前 flavor 匹配的 APK，不会静默安装。发布者必须继续使用相同签名证书，否则 Android 会拒绝覆盖更新。
+本版本会定期查询 `Null9797/aerial-tv-universal` 的最新正式 Release；联网并打开 Halo TV/控制中心时会检查更新。发现新版本后选择下载，电视系统安装器会显示确认界面。应用只选取与当前 flavor 匹配的 APK，不会静默安装。发布者必须继续使用相同签名证书，否则 Android 会拒绝覆盖更新。
 
 - 安装新版本时使用 `adb install -r <APK路径>`，这会尝试保留应用数据。
 - Standard 与 Guard 共用包名，安装另一个变体会替换当前变体，不能并行使用。
-- 卸载前先在电视中切回原桌面。随后可在「设置 → 应用 → Aerial → 卸载」操作；也可运行 `adb uninstall app.orchard.tv`。该命令只卸载 Aerial，不要将包名替换成系统应用。
+- 卸载前先在电视中切回原桌面。随后可在「设置 → 应用 → Halo TV → 卸载」操作；也可运行 `adb uninstall app.orchard.tv`。该命令只卸载 Halo TV，不要将包名替换成系统应用。
 - 安装完成后可在开发者选项关闭 ADB 调试；应用运行不要求电脑一直连接。
 
 ## 8. 让 AI 助手代为安装
@@ -121,7 +121,7 @@ adb shell monkey -p app.orchard.tv 1
 请使用能够在本机执行命令的 AI 编程助手（例如 Codex、Claude Code 或其他本地代理）。纯网页聊天无法直接访问你的电脑或电视。将电视 IP、APK 文件路径和以下提示词交给助手：
 
 ```text
-请通过我电脑上的 Android Platform Tools 用 ADB 安装这个 Aerial APK。
+请通过我电脑上的 Android Platform Tools 用 ADB 安装这个 Halo TV APK。
 电视 IP：<电视 IP>
 APK 文件路径：<APK 完整路径>
 
@@ -130,7 +130,7 @@ APK 文件路径：<APK 完整路径>
 如果电视只开放传统网络 ADB，再尝试 adb connect <IP:5555>。
 运行 adb devices -l 确认目标状态为 device 后，再运行 adb install -r "<APK路径>"。
 若电视要求授权、配对码或安装确认，请暂停，让我在电视上亲自确认。
-安装后告诉我如何打开 Aerial 和选择默认桌面。不要卸载其他应用、关闭系统验证、
+安装后告诉我如何打开 Halo TV 和选择默认桌面。不要卸载其他应用、关闭系统验证、
 停用系统安装器、改写系统设置或授予持续权限；这些步骤只有在我另行明确要求后才执行。
 ```
 

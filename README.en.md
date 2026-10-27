@@ -1,6 +1,6 @@
-# Aerial Universal — Unofficial Derivative Build
+# Halo TV — Unofficial Aerial Derivative
 
-> **This is not an original Aerial release and is not created, published, or endorsed by the upstream author.** It is a derivative build based on the open-source [Aerial project by pengchujin](https://github.com/pengchujin/aerial-tv), maintained and packaged independently by Null_. See the included upstream MIT license.
+> **Halo TV is not an original Aerial release and is not created, published, or endorsed by the upstream author.** It is a derivative build based on the open-source [Aerial project by pengchujin](https://github.com/pengchujin/aerial-tv), maintained and packaged independently by Null_. See the included upstream MIT license.
 
 **中文说明：** [README.md](README.md) · **Installation:** [INSTALL.md](INSTALL.md) · **FAQ:** [FAQ.md](FAQ.md)
 
@@ -10,11 +10,14 @@ Get the APKs from [GitHub Releases](https://github.com/Null9797/aerial-tv-univer
 
 | Variant | File | Use case |
 |---|---|---|
-| Standard | `aerial-universal-1.57-standard.apk` | Declares Android's regular HOME launcher entry. Try this first on Android TV / Google TV. |
-| Guard | `aerial-universal-1.57-guard.apk` | Omits the HOME entry for firmware that blocks launcher packages. Follow the in-app setup and grant only permissions you understand and need. |
+| Standard | `aerial-universal-1.58-standard.apk` | Declares Android's regular HOME launcher entry. Try this first on Android TV / Google TV. |
+| Guard | `aerial-universal-1.58-guard.apk` | Omits the HOME entry for firmware that blocks launcher packages. Follow the in-app setup and grant only permissions you understand and need. |
 
-## What this build adds
+## Halo TV branding and features
 
+- Rebranded the app label, launcher icon, Android TV banner, update screen, and phone setup page as Halo TV.
+- Added an in-app notice that Halo TV is an unofficial derivative of the open-source Aerial project.
+- Kept the package name, signing identity, and updater-compatible APK filename prefix so existing 1.57 installs can update in place.
 - TV layout that adapts to the available display area, with time, date, weather, network/settings controls, and a five-app dock.
 - Bundled 14 TV-sized icons for recognized apps, with original-icon fallback for all others.
 - Refined dock sizing, focus animation, and spacing for remote navigation.
@@ -23,7 +26,9 @@ Get the APKs from [GitHub Releases](https://github.com/Null9797/aerial-tv-univer
 - Flip-clock screensaver with configurable idle-to-screensaver and screensaver-to-standby delays.
 - Upstream Aerial wallpaper, app organization, and screensaver capabilities.
 
-![Aerial Universal TV home screen](screenshots/home-tcl-demo.png)
+![Halo TV app icon](screenshots/halo-tv-icon.png)
+
+![Halo TV home screen](screenshots/home-tcl-demo.png)
 
 ![Flip-clock screensaver](screenshots/flip-clock-demo.png)
 
@@ -36,7 +41,7 @@ The detailed [installation guide](INSTALL.md) covers Android TV / Google TV deve
 Short version: enable ADB debugging on the TV, connect the TV and computer to the same local network, authorize the computer on the TV, then install one APK with:
 
 ```shell
-adb install -r "/path/to/aerial-universal-1.57-standard.apk"
+adb install -r "/path/to/aerial-universal-1.58-standard.apk"
 ```
 
 Do not assume every TV uses port 5555. Android 11+ wireless debugging generally shows a pairing port and a separate connection port on the TV. See [Android's official ADB guide](https://developer.android.com/tools/adb).
