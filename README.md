@@ -8,8 +8,8 @@
 
 | 文件 | 版本 | 适用情形 |
 |---|---|---|
-| [Standard APK](https://github.com/Null9797/halo-tv/releases/download/v1.58-halo/aerial-universal-1.58-standard.apk) | 1.58-halo（versionCode 81） | 常规 Android TV / Google TV。声明标准 Android HOME 桌面入口，可通过系统界面设置默认桌面。建议先试这个版本。 |
-| [Guard APK](https://github.com/Null9797/halo-tv/releases/download/v1.58-halo/aerial-universal-1.58-guard.apk) | 1.58-halo-guard（versionCode 81） | 部分国产固件会拒绝安装声明 HOME 桌面入口的应用；此版本不声明该入口，需在 Halo TV 内完成守护桌面设置，并按引导授予必要权限。 |
+| [Standard APK](https://github.com/Null9797/halo-tv/releases/download/v1.61-halo/aerial-universal-1.61-standard.apk) | 1.61-halo（versionCode 84） | 常规 Android TV / Google TV。声明标准 Android HOME 桌面入口，可通过系统界面设置默认桌面。建议先试这个版本。 |
+| [Guard APK](https://github.com/Null9797/halo-tv/releases/download/v1.61-halo/aerial-universal-1.61-guard.apk) | 1.61-halo-guard（versionCode 84） | 部分国产固件会拒绝安装声明 HOME 桌面入口的应用；此版本不声明该入口，需在 Halo TV 内完成守护桌面设置，并按引导授予必要权限。 |
 
 如果不确定，先选 **standard**。若电视明确提示不允许安装桌面类应用，再试 **guard**。从一个版本切换到另一个版本时会覆盖同包名应用；如系统提示签名或降级冲突，请停止操作并先联系维护者，不要卸载电视上的其他应用。
 
@@ -21,9 +21,9 @@
 
 ![Halo TV 1.58 桌面主页（TCL Q10G Pro 实机截图）](screenshots/home-tcl-q10g-pro-1.58.png)
 
-## 1.58 Halo TV 品牌更新
+## Halo TV 主要功能
 
-- 应用名、启动图标、Android TV 横幅、更新页标题和手机设置页标题统一改为 Halo TV。
+- 1.61 修复启动器图标：完整呈现 Halo TV 主题、去掉白边和黑边，并更新自适应图标及多分辨率资源。
 - 在更新页面添加基于 Aerial 开源项目二次开发的非官方声明。
 - 保留原包名、签名及更新器可识别的 APK 文件名前缀，以支持从 1.57 覆盖升级。
 - 按可用电视显示区域自适应布局，呈现时间、日期、天气、快捷入口和五应用 Dock。
@@ -65,7 +65,7 @@ adb pair <电视IP>:<配对端口>
 # 根据提示输入电视显示的一次性配对码
 adb connect <电视IP>:<连接端口>
 adb devices
-adb install -r "/path/to/aerial-universal-1.58-standard.apk"
+adb install -r "/path/to/aerial-universal-1.61-standard.apk"
 ```
 
 旧版 Android TV 或电视自带网络 ADB 常见连接方式是 `adb connect <电视IP>:5555`。端口会因 Android 版本、厂商和当前调试模式不同而变化，应以电视调试页显示的信息为准。macOS、Windows、Linux 的 Android Platform Tools 与官方 ADB 说明见 [Android Developers：ADB](https://developer.android.com/tools/adb) 和 [Run apps on a hardware device](https://developer.android.com/studio/run/device)。
@@ -160,8 +160,8 @@ Halo TV 定期检查本仓库的 GitHub Releases。电视联网后，打开 Halo
 
 ## 发布信息
 
-- 版本：`1.58-halo` / `1.58-halo-guard`
-- versionCode：`81`
+- 版本：`1.61-halo` / `1.61-halo-guard`
+- versionCode：`84`
 - 最低 Android：Android 5.0（API 21）
 - 构建基线：Aerial 上游 `pengchujin/aerial-tv`，基线提交 `b48e2775c58b87b590ce73bd10f0d00a5f7e852f`
 - 文件校验：见 [SHA256SUMS.txt](SHA256SUMS.txt)
