@@ -2,6 +2,12 @@
 
 > **重要说明：本项目并非 Aerial 原作者作品，也不是官方发行版。** 本项目基于 [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv) 开源项目进行二次开发，由 Null_ 整理和发布。Aerial 原项目及其名称、代码和许可归原作者及各自权利人所有。本项目与 Aerial 原作者、Apple、电视厂商均无隶属或背书关系。
 
+## Halo TV Lite（Android 4.0–4.4 测试版）
+
+[下载 Halo TV Lite 1.0 Beta 和对应源码](https://github.com/Null9797/halo-tv/releases/tag/v1.0-halo-lite-beta) ｜ [校验文件](SHA256SUMS-Lite.txt)
+
+Lite 基于 Aerial Lite 二次开发，使用独立包名，可与完整版共存。包含 Halo 桌面、五应用 Dock、时间日期天气、静态风景及必应壁纸和翻页时钟；不包含动态视频壁纸、自动更新、桌面守护或屏保后自动待机。**目前仅在较新 Android TV 模拟器进行了基本界面检查，Android 4.x 真机尚未验证**，请先保留原桌面，设备兼容情况以实际测试为准。Lite 测试版不会替换下方完整版正式版。
+
 ## 下载
 
 前往 [Releases](https://github.com/Null9797/halo-tv/releases/latest) 下载 APK。两个版本面向不同电视固件，**同一台电视只安装其中一个**：它们使用相同应用包名，不能同时安装。
