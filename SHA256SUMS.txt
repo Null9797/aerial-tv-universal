@@ -1,3 +1,3 @@
-7775f730c623dd8e9f87d92b3f4df675eac2b3600c0efe8ba319d6114b773b45  aerial-universal-1.64-guard.apk
-4bf0293b8dfac19fde74c26b3c4c3e22c1905847b0a3e25e713174509b0be41f  aerial-universal-1.64-standard.apk
-20c4da3e5a0603b5fe20d9ae000ca9ee615e906b69896fda904de252555f4b89  HaloTV-1.64-source.zip
+8dc47872a9264aee87487af09d2768a651f7e91b1cda3b68785f6b7e0607208c  aerial-universal-1.65-guard.apk
+0f96dd4865b50f2fde50772c300146bc2f2978543df79cc97386f76fa41b2d27  aerial-universal-1.65-standard.apk
+7d579620a38a4d735246dd31e5e6ee9dc6ff5a3a9dc4cccd365ffa7ab6938ca3  HaloTV-1.65-source.zip
