@@ -4,9 +4,9 @@
 
 ## Halo TV Lite（Android 4.0–4.4 测试版）
 
-[下载 Halo TV Lite 1.1 Beta 和对应源码](https://github.com/Null9797/halo-tv/releases/tag/v1.1-halo-lite-beta) ｜ [校验文件](SHA256SUMS-Lite.txt)
+[下载 Halo TV Lite 1.2 Beta 和对应源码](https://github.com/Null9797/halo-tv/releases/tag/v1.2-halo-lite-beta) ｜ [校验文件](SHA256SUMS-Lite.txt)
 
-Lite 1.1 基于 Aerial Lite 1.6 二次开发，使用独立包名，可与完整版共存。包含 Halo 桌面、五应用 Dock、时间日期天气、静态风景及必应壁纸和翻页时钟；不包含动态视频壁纸、自动更新、桌面守护或屏保后自动待机。**目前仅在较新 Android TV 模拟器进行了基本界面检查，Android 4.x 真机尚未验证**，请先保留原桌面，设备兼容情况以实际测试为准。Lite 测试版不会替换下方完整版正式版。
+Lite 1.2 基于 Aerial Lite 1.6 二次开发，使用独立包名，可与完整版共存。包含 Halo 桌面、五应用 Dock、时间日期天气、静态风景及必应壁纸和翻页时钟；不包含动态视频壁纸、自动更新、桌面守护或屏保后自动待机。**目前仅在较新 Android TV 模拟器进行了基本界面检查，Android 4.x 真机尚未验证**，请先保留原桌面，设备兼容情况以实际测试为准。Lite 测试版不会替换下方完整版正式版。
 
 ## 下载
 
@@ -14,8 +14,8 @@ Lite 1.1 基于 Aerial Lite 1.6 二次开发，使用独立包名，可与完整
 
 | 文件 | 版本 | 适用情形 |
 |---|---|---|
-| [Standard APK](https://github.com/Null9797/halo-tv/releases/download/v1.65-halo/aerial-universal-1.65-standard.apk) | 1.65-halo（versionCode 93） | 常规 Android TV / Google TV。声明标准 Android HOME 桌面入口，可通过系统界面设置默认桌面。建议先试这个版本。 |
-| [Guard APK](https://github.com/Null9797/halo-tv/releases/download/v1.65-halo/aerial-universal-1.65-guard.apk) | 1.65-halo-guard（versionCode 93） | 部分国产固件会拒绝安装声明 HOME 桌面入口的应用；此版本不声明该入口，需在 Halo TV 内完成守护桌面设置，并按引导授予必要权限。 |
+| [Standard APK](https://github.com/Null9797/halo-tv/releases/download/v1.66-halo/aerial-universal-1.66-standard.apk) | 1.66-halo（versionCode 95） | 常规 Android TV / Google TV。声明标准 Android HOME 桌面入口，可通过系统界面设置默认桌面。建议先试这个版本。 |
+| [Guard APK](https://github.com/Null9797/halo-tv/releases/download/v1.66-halo/aerial-universal-1.66-guard.apk) | 1.66-halo-guard（versionCode 95） | 部分国产固件会拒绝安装声明 HOME 桌面入口的应用；此版本不声明该入口，需在 Halo TV 内完成守护桌面设置，并按引导授予必要权限。 |
 
 如果不确定，先选 **standard**。若电视明确提示不允许安装桌面类应用，再试 **guard**。从一个版本切换到另一个版本时会覆盖同包名应用；如系统提示签名或降级冲突，请停止操作并先联系维护者，不要卸载电视上的其他应用。
 
@@ -26,6 +26,11 @@ Lite 1.1 基于 Aerial Lite 1.6 二次开发，使用独立包名，可与完整
 以下仅展示一张 Halo TV 1.58 Guard 在 TCL Q10G Pro（1920×1080）上通过 ADB 截取的桌面主页实机图。天气信息会随设备设置变化。其他尺寸、系统字体、安全区域和厂商固件可能造成外观差异。
 
 ![Halo TV 1.58 桌面主页（TCL Q10G Pro 实机截图）](screenshots/home-tcl-q10g-pro-1.58.png)
+
+## Halo TV 1.66 更新
+
+- 缩小首页右上角四个按钮并收紧间距；设置控制中心新增“支持 Halo TV 作者”，可自愿使用微信或支付宝扫码支持，全部功能仍免费。
+- Lite 1.2 测试版同步按钮和打赏入口，仍未在 Android 4.x 真机验证。
 
 ## Halo TV 1.65 更新
 
@@ -81,7 +86,7 @@ adb pair <电视IP>:<配对端口>
 # 根据提示输入电视显示的一次性配对码
 adb connect <电视IP>:<连接端口>
 adb devices
-adb install -r "/path/to/aerial-universal-1.65-standard.apk"
+adb install -r "/path/to/aerial-universal-1.66-standard.apk"
 ```
 
 旧版 Android TV 或电视自带网络 ADB 常见连接方式是 `adb connect <电视IP>:5555`。端口会因 Android 版本、厂商和当前调试模式不同而变化，应以电视调试页显示的信息为准。macOS、Windows、Linux 的 Android Platform Tools 与官方 ADB 说明见 [Android Developers：ADB](https://developer.android.com/tools/adb) 和 [Run apps on a hardware device](https://developer.android.com/studio/run/device)。
@@ -176,8 +181,8 @@ Halo TV 定期检查本仓库的 GitHub Releases。电视联网后，打开 Halo
 
 ## 发布信息
 
-- 版本：`1.65-halo` / `1.65-halo-guard`
-- versionCode：`93`
+- 版本：`1.66-halo` / `1.66-halo-guard`
+- versionCode：`95`
 - 最低 Android：Android 5.0（API 21）
 - 构建基线：Aerial 上游 `pengchujin/aerial-tv`，上游版本 `1.67`
 - 文件校验：见 [SHA256SUMS.txt](SHA256SUMS.txt)

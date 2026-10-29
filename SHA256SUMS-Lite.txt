@@ -1,2 +1,2 @@
-af02f454ede7608dad01c46c3467e40f38991dd057a1f22165b978d668b6cb44  HaloTV-Lite-1.1-beta.apk
-7d579620a38a4d735246dd31e5e6ee9dc6ff5a3a9dc4cccd365ffa7ab6938ca3  HaloTV-1.65-source.zip
+a8787d9ff26658f3d8f106c1fe6034541844a28017b9bd370a2b67826fd28f4f  HaloTV-Lite-1.2-beta.apk
+6153fbb4b729eb4ef24f0d31b4c6f4132ae44ef71fdfe2dbffe29ecd6c7f1056  HaloTV-1.66-source.zip
